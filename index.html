@@ -1,226 +1,118 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Verifikasi Nomor Sertifikasi</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f8f8f8;
-    }
-    header {
-      background: #1a1a1a;
-      color: #fff;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo-title {
-      display: flex;
-      align-items: center;
-    }
-    header img {
-      height: 40px;
-      margin-right: 10px;
-    }
-    .title {
-      font-size: 12px;
-      line-height: 1.2;
-    }
-    nav {
-      margin-left: 20px;
-      display: flex;
-      gap: 20px;
-      font-size: 14px;
-      align-items: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-style: italic;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h1 {
-      text-align: center;
-      font-size: 24px;
-    }
-    .data-title {
-      background: #007bff;
-      color: white;
-      padding: 10px;
-      margin: 20px 0;
-      font-size: 20px;
-      text-align: center;
-    }
-    .profile {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-    .photo {
-      width: 200px;
-      text-align: center;
-    }
-    .photo-placeholder {
-      width: 150px;
-      height: 200px;
-      background: #ccc;
-      margin: 0 auto;
-    }
-    .photo-info {
-      font-size: 12px;
-      color: orange;
-      margin-top: 10px;
-    }
-    .details {
-      flex: 1;
-      font-size: 14px;
-    }
-    .details-table {
-      margin-left: 20px;
-      width: 100%;
-    }
-    .details-table td {
-      padding: 5px;
-      vertical-align: top;
-    }
-    .status-badge {
-      background: green;
-      color: white;
-      padding: 2px 6px;
-      font-size: 12px;
-      border-radius: 4px;
-    }
-    .certify-text {
-      margin-top: 20px;
-      font-size: 14px;
-    }
-    .certify-text em {
-      font-style: italic;
-      color: gray;
-    }
-    .certificate {
-      margin-top: 20px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      background: #fafafa;
-    }
-    .footer {
-      background: #003366;
-      color: white;
-      font-size: 12px;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .footer-content div {
-      margin: 10px 0;
-    }
-    .footer a {
-      color: white;
-      text-decoration: none;
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifikasi Nomor Sertifikasi</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+        header { background: #fff; border-bottom: 1px solid #ccc; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-weight: bold; font-size: 14px; }
+        .logo span { display: block; font-size: 12px; }
+        nav { font-size: 14px; }
+        nav a { margin-left: 20px; text-decoration: none; color: #000; font-weight: bold; }
+        nav a:hover { color: #007bff; }
+
+        .title { text-align: center; margin: 30px 0 20px; font-size: 24px; font-weight: bold; }
+        .title span { font-size: 18px; font-weight: normal; }
+
+        .card { background: #fff; margin: 20px auto; padding: 20px; border-radius: 8px; max-width: 900px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+        .card-header { background: #007bff; color: #fff; padding: 10px; font-size: 18px; font-weight: bold; border-radius: 8px 8px 0 0; }
+        .card-header span { font-style: italic; }
+
+        .content { display: flex; padding: 20px; gap: 20px; }
+        .photo { flex: 1; text-align: center; }
+        .photo img { width: 120px; height: 150px; object-fit: cover; margin-bottom: 10px; }
+        .photo h2 { margin: 5px 0; font-size: 20px; color: #000; }
+        .photo p { margin: 0; font-size: 14px; color: #000; }
+        .badge { display: inline-block; background: orange; color: #000; font-weight: bold; padding: 5px 10px; font-size: 12px; border-radius: 4px; margin-top: 5px; }
+
+        .details { flex: 2; font-size: 14px; }
+        .details p { margin: 5px 0; }
+        .details b { display: inline-block; width: 160px; }
+        .status { color: green; font-weight: bold; }
+
+        .declaration { margin-top: 20px; font-size: 14px; }
+        .declaration p { margin: 10px 0; }
+        .declaration em { font-style: italic; }
+
+        .certificate-box { border: 1px solid #ccc; padding: 15px; margin-top: 20px; border-radius: 8px; }
+        .certificate-box h3 { color: #000; background: orange; display: inline-block; padding: 5px 10px; border-radius: 4px; font-size: 14px; }
+        .certificate-box p { margin: 5px 0; font-weight: bold; }
+
+        footer { background: #003366; color: #fff; font-size: 12px; padding: 20px; margin-top: 30px; display: flex; justify-content: space-between; }
+        footer .left, footer .right { width: 45%; }
+        footer .left p, footer .right p { margin: 5px 0; }
+    </style>
 </head>
 <body>
 
 <header>
-  <div class="logo-title">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Logo_Kementerian_Perhubungan_Indonesia.svg/120px-Logo_Kementerian_Perhubungan_Indonesia.svg.png" alt="Logo">
-    <div class="title">
-      Direktorat Jenderal Perhubungan Laut
+    <div class="logo">
+        Direktorat Jenderal Perhubungan Laut
+        <span>Kementerian Perhubungan Republik Indonesia</span>
     </div>
     <nav>
-      <a href="#">Beranda / Home</a>
+        <a href="#">Beranda <i>/Home</i></a>
+        <a href="#">Informasi <i>/Information</i></a>
+        <a href="#">MoU Reg I/10 STCW</a>
+        <a href="#">Verifikasi <i>/Verification</i></a>
     </nav>
-  </div>
 </header>
 
-<div class="container">
-  <h1>Verifikasi Nomor Sertifikasi <i>/ Number of Certificate Verification</i></h1>
-
-  <div class="data-title">Data Pelaut <i>/ Seafarer Data</i></div>
-
-  <div class="profile">
-    <div class="photo">
-      <div class="photo-placeholder"></div>
-      <div class="photo-info">
-        AGUS FRANSISCO - 6200425530 <br>
-        RATINGS AS ABLE SEAFARER DECK
-      </div>
-    </div>
-
-    <div class="details">
-      <table class="details-table">
-        <tr>
-          <td><b>Tempat / Tanggal Lahir</b><br><i>Place / Date of Birth</i></td>
-          <td>SURABAYA, 29 AUGUST 1976</td>
-        </tr>
-        <tr>
-          <td><b>Umur</b><br><i>Ages</i></td>
-          <td>48 Tahun / <i>Years Old</i></td>
-        </tr>
-        <tr>
-          <td><b>Jenis Kelamin</b><br><i>Gender</i></td>
-          <td>Laki - laki / <i>Male</i></td>
-        </tr>
-        <tr>
-          <td><b>Status</b><br><i>Status</i></td>
-          <td><span class="status-badge">AKTIF / Active</span></td>
-        </tr>
-      </table>
-
-      <div class="certify-text">
-        Dengan ini menyatakan bahwa Pelaut ini terdaftar dalam Data Induk Kepelautan dan memiliki sertifikat dasar dan keahlian tertinggi sebagai berikut :<br><br>
-        <em>Hereby Certify that this Seafarer is registered in Indonesian Seafarer Database and have a basic and proficiency certificates as follows:</em>
-      </div>
-
-      <div class="certificate">
-        <b>RATINGS AS ABLE SEAFARER DECK</b><br><br>
-        No. <b>620042553040625</b><br>
-        Poltekpel Barombong<br><br>
-        Berlaku Sampai Dengan 22-01-2030<br>
-        <i>Valid Until 22-01-2030</i>
-      </div>
-    </div>
-  </div>
+<div class="title">
+    Verifikasi Nomor Sertifikasi<br>
+    <span>Number of Certificate Verification</span>
 </div>
 
-<footer class="footer">
-  <div class="footer-content">
-    <div>
-      <b>Direktorat Perkapalan dan Kepelautan</b><br>
-      Jl. Medan Merdeka Barat No 8<br>
-      Jakarta, Indonesia 10110<br>
-      Contact Center : 151<br>
-      Email : kepelautan@dephub.go.id
+<div class="card">
+    <div class="card-header">
+        Data Pelaut <span>/ Seafarer Data</span>
     </div>
-    <div>
-      IMO (International Maritime Organization)<br>
-      ILO (International Labour Organization)<br>
-      BPSDM Kemenhub RI<br>
-      INSA (Indonesia National Shipowners Association)<br>
-      BKI (Biro Klasifikasi Indonesia)<br>
-      JDIH Kemenhub
+    <div class="content">
+        <div class="photo">
+            <img src="https://via.placeholder.com/120x150.png?text=Photo" alt="Foto Pelaut">
+            <h2>AGUS FRANSISCO</h2>
+            <p>6200425530</p>
+            <div class="badge">RATINGS AS ABLE SEAFARER DECK</div>
+        </div>
+        <div class="details">
+            <p><b>Tempat / Tanggal Lahir:</b> SURABAYA, 29 AUGUST 1976</p>
+            <p><b>Umur:</b> 48 Tahun / Years Old</p>
+            <p><b>Jenis Kelamin:</b> Laki-laki / Male</p>
+            <p><b>Status:</b> <span class="status">AKTIF / Active</span></p>
+
+            <div class="declaration">
+                <p>Dengan ini menyatakan bahwa Pelaut ini terdaftar dalam Data Induk Kepelautan dan memiliki sertifikat dasar dan keahlian tertinggi sebagai berikut :</p>
+                <p><em>Hereby Certify that this Seafarer is registered in Indonesian Seafarer Database and have a basic and proficiency certificates as follows:</em></p>
+            </div>
+
+            <div class="certificate-box">
+                <h3>RATINGS AS ABLE SEAFARER DECK</h3>
+                <p>No. 6200425533040625</p>
+                <p>Poltekpel Barombong</p>
+            </div>
+        </div>
     </div>
-  </div>
-  <div style="text-align: center; margin-top: 20px;">
-    © 2024 Direktorat Perkapalan & Kepelautan, Direktorat Jenderal Perhubungan Laut, Kementerian Perhubungan Republik Indonesia
-  </div>
+</div>
+
+<footer>
+    <div class="left">
+        <p>Direktorat Perkapalan dan Kepelautan</p>
+        <p>Jl. Medan Merdeka Barat No 8</p>
+        <p>Jakarta, Indonesia 10110</p>
+        <p>Contact Center : 151</p>
+        <p>Email : kepelautan@dephub.go.id</p>
+    </div>
+    <div class="right">
+        <p>IMO (International Maritime Organization)</p>
+        <p>ILO (International Labour Organization)</p>
+        <p>BPSDM Kemenhub RI</p>
+        <p>INSA (Indonesia National Shipowners Association)</p>
+        <p>BKI (Biro Klasifikasi Indonesia)</p>
+        <p>JDIH Kemenhub</p>
+    </div>
 </footer>
 
 </body>
