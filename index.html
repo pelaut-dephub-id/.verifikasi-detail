@@ -1,184 +1,184 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verifikasi Nomor Sertifikasi</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verifikasi Sertifikat Pelaut</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
     body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        color: #333;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #333;
     }
     header {
-        background-color: #1e1e1e;
-        padding: 10px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 15px;
-        font-size: 14px;
+    header img {
+      height: 60px;
+      margin-right: 15px;
+    }
+    header div {
+      line-height: 1.2;
+    }
+    header div h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    header div p {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
     }
     .title {
-        text-align: center;
-        margin: 30px 0 10px;
-        font-size: 24px;
-        font-weight: bold;
+      text-align: center;
+      margin: 30px 0 10px;
+      font-size: 24px;
+      font-weight: 700;
     }
     .subtitle {
-        background-color: #007bff;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        font-size: 20px;
-        font-style: italic;
+      text-align: center;
+      background: #0056A8;
+      color: white;
+      padding: 10px;
+      font-size: 20px;
+      margin-bottom: 30px;
     }
-    .card {
-        background: white;
-        margin: 30px auto;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        width: 80%;
-        display: flex;
-        gap: 20px;
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
     }
-    .photo-section {
-        text-align: center;
-        width: 30%;
+    .photo-card {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .photo-section img {
-        width: 120px;
-        height: 160px;
-        object-fit: cover;
-        border: 1px solid #ccc;
+    .photo-card img {
+      width: 120px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 5px;
     }
-    .photo-section h2 {
-        font-size: 18px;
-        margin: 10px 0 5px;
+    .photo-card h2 {
+      margin: 10px 0 5px;
+      font-size: 18px;
     }
-    .photo-section p {
-        font-size: 14px;
+    .photo-card p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
     }
-    .badge {
-        display: inline-block;
-        background: gold;
-        padding: 5px 10px;
-        margin-top: 10px;
-        font-size: 12px;
-        font-weight: bold;
-        border-radius: 3px;
+    .data-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 500px;
     }
-    .info-section {
-        width: 70%;
-        font-size: 14px;
+    .data-card table {
+      width: 100%;
+      font-size: 14px;
     }
-    .info-section table {
-        width: 100%;
-        margin-bottom: 20px;
+    .data-card td {
+      padding: 8px;
+      vertical-align: top;
     }
-    .info-section td {
-        padding: 5px;
-        vertical-align: top;
+    .data-card .status {
+      background: #28a745;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-size: 12px;
     }
-    .status {
-        display: inline-block;
-        background: #28a745;
-        color: white;
-        padding: 2px 8px;
-        font-size: 12px;
-        border-radius: 3px;
-        font-weight: bold;
+    .certificate {
+      margin: 30px auto;
+      max-width: 800px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .certification {
-        border-top: 1px solid #ccc;
-        padding-top: 15px;
-        font-size: 14px;
-        line-height: 1.6;
+    .certificate p {
+      font-size: 14px;
+      text-align: justify;
     }
-    .footer {
-        background-color: #003366;
-        color: white;
-        padding: 20px;
-        font-size: 12px;
-        text-align: center;
+    footer {
+      background: #0056A8;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
     }
-    .footer a {
-        color: white;
-        text-decoration: none;
-    }
-</style>
+  </style>
 </head>
 <body>
 
 <header>
-    <nav>
-        <a href="#">Beranda</a>
-        <a href="#">Informasi</a>
-        <a href="#">MoU Reg I/10 STCW</a>
-        <a href="#">Verifikasi</a>
-    </nav>
+  <img src="logo-direktorat.png" alt="Logo Direktorat">
+  <div>
+    <h1>Direktorat Jenderal Perhubungan Laut</h1>
+    <p>Kementerian Perhubungan Republik Indonesia</p>
+  </div>
 </header>
 
-<div class="title">
-    Verifikasi Nomor Sertifikasi <br>
-    <small><i>Number of Certificate Verification</i></small>
+<div class="title">Verifikasi Nomor Sertifikasi / <i>Number of Certificate Verification</i></div>
+
+<div class="subtitle">Data Pelaut / <i>Seafarer Data</i></div>
+
+<div class="container">
+  <div class="photo-card">
+    <img src="foto-pelaut.jpg" alt="Foto Pelaut">
+    <h2>AGUS FRANSISCO</h2>
+    <p>6200425530</p>
+  </div>
+
+  <div class="data-card">
+    <table>
+      <tr>
+        <td><b>Tempat / Tanggal Lahir</b></td>
+        <td>Surabaya, 29 Agustus 1976</td>
+      </tr>
+      <tr>
+        <td><b>Umur</b></td>
+        <td>48 Tahun</td>
+      </tr>
+      <tr>
+        <td><b>Jenis Kelamin</b></td>
+        <td>Laki-laki</td>
+      </tr>
+      <tr>
+        <td><b>Status</b></td>
+        <td><span class="status">AKTIF</span></td>
+      </tr>
+    </table>
+  </div>
 </div>
 
-<div class="subtitle">
-    Data Pelaut / <i>Seafarer Data</i>
+<div class="certificate">
+  <p>Dengan ini menyatakan bahwa Pelaut ini terdaftar dalam Data Induk Kepelautan dan memiliki sertifikat dasar dan keahlian tertinggi sebagai berikut :</p>
+  <p><i>Hereby Certify that this Seafarer is registered in Indonesian Seafarer Database and have a basic and proficiency certificates as follows:</i></p>
+  <br>
+  <p><b>RATINGS AS ABLE SEAFARER DECK</b><br>
+  No. 6200425533040625<br>
+  Poltekpel Barombong</p>
 </div>
 
-<div class="card">
-    <div class="photo-section">
-        <img src="https://via.placeholder.com/120x160.png?text=Foto" alt="Foto Pelaut">
-        <h2>AGUS FRANSISCO</h2>
-        <p>6200425530</p>
-        <div class="badge">RATINGS AS ABLE SEAFARER DECK</div>
-    </div>
-    <div class="info-section">
-        <table>
-            <tr>
-                <td><strong>Tempat / Tanggal Lahir</strong><br><small>Place / Date of Birth</small></td>
-                <td>SURABAYA, 29 AUGUST 1976</td>
-            </tr>
-            <tr>
-                <td><strong>Umur</strong><br><small>Ages</small></td>
-                <td>48 Tahun / Years Old</td>
-            </tr>
-            <tr>
-                <td><strong>Jenis Kelamin</strong><br><small>Gender</small></td>
-                <td>Laki - laki / Male</td>
-            </tr>
-            <tr>
-                <td><strong>Status</strong><br><small>Status</small></td>
-                <td><span class="status">AKTIF / Active</span></td>
-            </tr>
-        </table>
-
-        <div class="certification">
-            <p>Dengan ini menyatakan bahwa Pelaut ini terdaftar dalam Data Induk Kepelautan dan memiliki sertifikat dasar dan keahlian tertinggi sebagai berikut :</p>
-            <p><i>Hereby Certify that this Seafarer is registered in Indonesian Seafarer Database and have a basic and proficiency certificates as follows:</i></p>
-
-            <h3>RATINGS AS ABLE SEAFARER DECK</h3>
-            <p>No. <strong>6200425530340625</strong></p>
-            <p>Poltekpel Barombong</p>
-        </div>
-    </div>
-</div>
-
-<div class="footer">
-    Direktorat Perkapalan dan Kepelautan<br>
-    Jl. Medan Merdeka Barat No 8, Jakarta, Indonesia 10110<br>
-    Contact Center : 151 | Email : kepelautan@dephub.go.id
-    <br><br>
-    &copy; 2024 Direktorat Perkapalan & Kepelautan, Kementerian Perhubungan Republik Indonesia
-</div>
+<footer>
+  <p>Direktorat Perkapalan dan Kepelautan, Jl. Medan Merdeka Barat No 8, Jakarta, Indonesia 10110<br>
+  Contact Center: 151 | Email: kepelautan@dephub.go.id</p>
+  <p>&copy; 2024 Direktorat Perkapalan & Kepelautan, Kementerian Perhubungan Republik Indonesia</p>
+</footer>
 
 </body>
 </html>
