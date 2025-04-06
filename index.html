@@ -16,24 +16,26 @@
       display: flex;
       align-items: center;
     }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
     header img {
       height: 40px;
-      margin-right: 10px;
     }
-    header .title {
-      font-size: 12px;
-      line-height: 1.2;
-      margin-right: auto;
-    }
-    nav {
-      display: flex;
-      gap: 20px;
+    .title {
       font-size: 14px;
+      font-weight: bold;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
+    .menu {
+      margin-left: 15px;
+      font-size: 14px;
       font-style: italic;
+    }
+    .menu a {
+      color: #ff9900;
+      text-decoration: none;
     }
     .container {
       max-width: 1000px;
@@ -58,6 +60,7 @@
     .profile {
       display: flex;
       gap: 20px;
+      align-items: flex-start;
     }
     .photo {
       width: 200px;
@@ -67,28 +70,19 @@
       width: 150px;
       height: 200px;
       background: #ccc;
-      margin: 0 auto 10px;
+      margin: 0 auto;
     }
-    .photo-name {
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .photo-code {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-    .badge {
-      background: yellow;
-      padding: 5px 10px;
-      display: inline-block;
+    .photo-info {
       font-size: 12px;
-      font-weight: bold;
+      color: orange;
+      margin-top: 10px;
     }
     .details {
       flex: 1;
       font-size: 14px;
     }
     .details-table {
+      margin-left: 20px;
       width: 100%;
     }
     .details-table td {
@@ -141,17 +135,13 @@
 <body>
 
 <header>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Logo_Kementerian_Perhubungan_Indonesia.svg/120px-Logo_Kementerian_Perhubungan_Indonesia.svg.png" alt="Logo">
-  <div class="title">
-    Direktorat Jenderal Perhubungan Laut <br>
-    Kementerian Perhubungan Republik Indonesia
+  <div class="logo-title">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Logo_Kementerian_Perhubungan_Indonesia.svg/120px-Logo_Kementerian_Perhubungan_Indonesia.svg.png" alt="Logo">
+    <div class="title">Direktorat Jenderal Perhubungan Laut</div>
+    <div class="menu">
+      <a href="#">Beranda / Home</a>
+    </div>
   </div>
-  <nav>
-    <a href="#">Beranda / Home</a>
-    <a href="#">Informasi / Information</a>
-    <a href="#">MoU Reg I/10 STCW</a>
-    <a href="#">Verifikasi / Verification</a>
-  </nav>
 </header>
 
 <div class="container">
@@ -162,9 +152,10 @@
   <div class="profile">
     <div class="photo">
       <div class="photo-placeholder"></div>
-      <div class="photo-name">AGUS FRANSISCO</div>
-      <div class="photo-code">6200425530</div>
-      <div class="badge">RATINGS AS ABLE SEAFARER DECK</div>
+      <div class="photo-info">
+        AGUS FRANSISCO - 6200425530 <br>
+        RATINGS AS ABLE SEAFARER DECK
+      </div>
     </div>
 
     <div class="details">
